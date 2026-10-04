@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Uri Berry — Product Design Lead</title>
 <meta name="description" content="Uri Berry — Product Design Lead in Tel Aviv. A decade of designing complex B2B and AI products. New portfolio coming soon.">
 <meta property="og:title" content="Uri Berry — Product Design Lead">
@@ -22,12 +22,11 @@
     :root{--bg:#121110; --fg:#ece8e2; --muted:#9a948b; --faint:#6b665f; --line:#26241f; --accent:#ef6446}
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
   body{
     background:var(--bg); color:var(--fg);
     font-family:Inter,system-ui,-apple-system,sans-serif; font-size:15px; line-height:1.6;
     font-feature-settings:"cv11","ss01"; -webkit-font-smoothing:antialiased;
-    display:flex; flex-direction:column; min-height:100vh;
+    display:flex; flex-direction:column; min-height:100vh; min-height:100svh;
     padding:clamp(24px,4vw,48px) clamp(20px,5vw,64px);
   }
   ::selection{background:var(--accent);color:#fff}
@@ -57,7 +56,17 @@
 
   footer{border-top:1px solid var(--line);padding-top:20px;color:var(--faint)}
   @media (prefers-reduced-motion:reduce){.dot::after{animation:none}}
-  @media (max-width:520px){main{padding:48px 0}.eyebrow{margin-bottom:20px}}
+  @media (max-width:520px){
+    body{padding:20px 22px calc(20px + env(safe-area-inset-bottom))}
+    header,footer{font-size:12px}
+    main{padding:28px 0}
+    .eyebrow{font-size:11px;margin-bottom:16px}
+    h1{font-size:clamp(32px,9.5vw,40px)}
+    .lead{margin-top:20px;font-size:15px;line-height:1.6}
+    .lead+.lead{margin-top:10px}
+    .links{margin-top:26px;gap:12px 22px;font-size:13.5px}
+    footer{padding-top:14px}
+  }
 </style>
 </head>
 <body>
